@@ -28,7 +28,8 @@ class MainPage(tk.Frame):
 class windows(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
-        #the title
+        
+        #windows customize
         self.wm_title("I-SCHED")
         width =1000
         height = 700
@@ -41,7 +42,9 @@ class windows(tk.Tk):
         self.resizable(0,0)
         container = customtkinter.CTkFrame(self, fg_color="#EFE6D5")
         container.place(relx=.5, rely=.5,anchor= "center")
-        self.discUserInfo = {}
+        #windows customize
+        
+        self.discUserInfo = {} #current_username
         ## required to make window show before the program gets to the mainloop
         self.frames = {}
         # we'll create the frames themselves later but let's add the components to the dictionary.

@@ -220,9 +220,9 @@ def confirm_update(top, self, tree, task_id, updated_taskname, updated_datec, up
     add_to_scheduletree(self, scheduletree)
            
     # Clear the entry fields after successful update
-    taskname.delete(0, tk.END)
-    datec.configure(text="")
+    taskname.delete(0, "end")
     timel.configure(text="")
+    datec.configure(text="")
     duration_value.set(1)
     importance_value.set(1)
     top.destroy()
@@ -303,9 +303,7 @@ def updatetask(self, tree, scheduletree):
     importance_value.set(task_importance)
 
     # Create the "Update Task" button
-    update_button = customtkinter.CTkButton(top, font=font3,command=lambda: confirm_update
-                                            (top, self, tree, task_id, taskname.get(), datec.cget("text"), timel.cget("text"), duration_value.get(), importance_value.get(), 
-                                            taskname, datec, timel,duration_value, importance_value, scheduletree),
+    update_button = customtkinter.CTkButton(top, font=font3,command=lambda: confirm_update(top, self, tree, task_id, taskname.get(), datec.cget("text"), timel.cget("text"), duration_value.get(), importance_value.get(), taskname, datec, timel,duration_value, importance_value, scheduletree),
                                             hover_color="#000000", text_color="#D7EAF3", text="UPDATE TASK", width=300,
                                             fg_color="#14397D", cursor="hand2", corner_radius=5,
                                             border_color="#000000", border_width=1, height=35)
@@ -518,6 +516,7 @@ def convert_to_datetime(time_str):
     return datetime.strptime(time_str, '%H:%M')
 
 def calmaxbasedtime(current_time_str, list_of_idle_time):
+    #conversion string array
     current_time = convert_to_datetime(current_time_str)
 
     total_working_time = 0.0
@@ -610,6 +609,7 @@ def fractional_knapsack(tasks, current_username):
                 'hoursfromdeadline': task['hoursfromdeadline'],
                 'day': datetoday + timedelta(days=1)
             }
+            #messagebox #warning overdue
             task_due_date = datetime.strptime(partial_task['duedate'], "%m/%d/%y")
             tday = partial_task['day']
             check_if_due(str(partial_task['task_id']), task_due_date, tday)
@@ -679,10 +679,12 @@ def fractional_knapsack(tasks, current_username):
         
 def currentvalues(tasks):
     for i in tasks:
+        #date & time
         today = date.today()    
         datetoday = today.strftime("%m/%d/%y")
         timenow = datetime.now()
         currenttime = timenow.strftime("%H:%M")
+        #string separation
         datetoday_date = datetoday.split('/')
         datetoday_time = currenttime.split(':')
         taskdate_date = i['duedate'].split('/')
@@ -750,12 +752,11 @@ def add_to_scheduletree(self, scheduletree):
         }
         tasks_with_names.append(sched_dict)
     
+    
     #calculation formula: value = importance/hoursfromdeadline
     taskwithvalues = currentvalues(tasks_with_names)
-    
     #mergesort
     sorted_task = merge_sort(taskwithvalues)
-    
     #fractional knapsack (assign based on idle time & current date and time)
     resulted = fractional_knapsack(sorted_task, current_username)
     
