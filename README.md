@@ -43,22 +43,4 @@ This application was developed by students from the **Polytechnic University of 
 | Ibao, Danielle Karl  | System Analyst, Researcher   |
 | Nunez, Mher Angelo   | Quality Tester, Documentation|
 
----
 
-## 📸 UI Screenshots
-
-You can view a preview of the application in both **carousel** and **grid** modes inside the app showcase interface.  
-Here's a sample grid layout of the UI:
-
-| Login | Add Task | View Schedule |
-|-------|----------|----------------|
-| ![](assets/isched_ui_1.png) | ![](assets/isched_ui_2.png) | ![](assets/isched_ui_3.png) |
-
----
-
-## 🚀 How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/isched.git
-   cd isched
