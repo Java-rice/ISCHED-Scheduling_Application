@@ -1,8 +1,6 @@
-from pathlib import Path
+# 🗓 I-SCHED: Automated Job Scheduling System
 
-readme_content = """# 🗓 I-SCHED: Automated Job Scheduling System
-
-**I-SCHED** is a simple Python-based desktop application developed using **Tkinter** that automates job scheduling using advanced algorithmic techniques such as the **Fractional Knapsack**, **Earliest Deadline First (EDF)**, and **Merge Sort** algorithms. Designed with usability and optimization in mind, the system intelligently arranges tasks based on deadlines, importance, and available time, helping users manage their schedules more efficiently.
+**I-SCHED** is a Python-based desktop application developed using **Tkinter** that automates job scheduling using advanced algorithmic techniques such as the **Fractional Knapsack**, **Earliest Deadline First (EDF)**, and **Merge Sort** algorithms. Designed with usability and optimization in mind, the system intelligently arranges tasks based on deadlines, importance, and available time, helping users manage their schedules more efficiently.
 
 ---
 
@@ -14,7 +12,7 @@ This application was developed by students from the **Polytechnic University of 
 
 ## 🧠 Core Features
 
-- ✅ Task scheduling using Fractional Knapsack and EDF
+- ✅ Intelligent task scheduling using Fractional Knapsack and EDF
 - 📊 Task sorting via Merge Sort based on urgency and value
 - ⏰ Real-time idle time detection and value-based prioritization
 - 📝 Add, update, delete, and review tasks with ease
@@ -31,7 +29,8 @@ This application was developed by students from the **Polytechnic University of 
 | Language         | Python 3                               |
 | GUI Framework    | Tkinter, customtkinter                 |
 | Storage          | SQLite                                 |
-
+| Utilities        | Pillow, tkcalendar, tktimepicker       |
+| Styling / Design | Tailwind-inspired UI (for documentation/presentation) |
 
 ---
 
@@ -43,3 +42,23 @@ This application was developed by students from the **Polytechnic University of 
 | Alberca, Cynthia     | UI/UX Designer, Documentation|
 | Ibao, Danielle Karl  | System Analyst, Researcher   |
 | Nunez, Mher Angelo   | Quality Tester, Documentation|
+
+---
+
+## 📸 UI Screenshots
+
+You can view a preview of the application in both **carousel** and **grid** modes inside the app showcase interface.  
+Here's a sample grid layout of the UI:
+
+| Login | Add Task | View Schedule |
+|-------|----------|----------------|
+| ![](assets/isched_ui_1.png) | ![](assets/isched_ui_2.png) | ![](assets/isched_ui_3.png) |
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/isched.git
+   cd isched
